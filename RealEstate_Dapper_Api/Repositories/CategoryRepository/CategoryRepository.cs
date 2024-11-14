@@ -80,11 +80,6 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
 				await connection.ExecuteAsync(query, parameters);
 			}
 
-
-
-
-
-
 		}
 	}
 }
