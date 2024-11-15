@@ -6,14 +6,11 @@ using RealEstate_Dapper_Api.Models.DapperContext;
 
 namespace RealEstate_Dapper_Api.Repositories.WhoWeAreRepository
 {
-    public class WhoWeAreRepository : IWhoWeAreRepository
+    public class WhoWeAreDetailRepository : IWhoWeAreDetailRepository
     {
         private readonly Context _context;
-
-
-    
-
-        public WhoWeAreRepository(Context context)
+      
+        public WhoWeAreDetailRepository(Context context)
         {
             _context = context;
         }
