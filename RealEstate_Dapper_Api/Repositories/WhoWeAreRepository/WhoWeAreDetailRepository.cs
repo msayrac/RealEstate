@@ -18,7 +18,7 @@ namespace RealEstate_Dapper_Api.Repositories.WhoWeAreRepository
         public async void CreateWhoWeAreDetail(CreateWhoWeAreDetailDto createWhoWeAreDetailDto)
         {
 
-            string query = "insert into WhoWeAreDetail (Title,SubTitle,Description1,Description1) values (@title,@subTitle,@description1,@description2)";
+            string query = "insert into WhoWeAreDetail (Title,SubTitle,Description1,Description2) values (@title,@subTitle,@description1,@description2)";
 
             var parameters = new DynamicParameters();
             parameters.Add("@title", createWhoWeAreDetailDto.Title);
@@ -57,9 +57,6 @@ namespace RealEstate_Dapper_Api.Repositories.WhoWeAreRepository
 
                 return values.ToList();
             }
-
-
-
         }
 
         public async Task<GetByIDWhoWeAreDetailDto> GetGetByIDWhoWeAreDetail(int id)
@@ -80,6 +77,7 @@ namespace RealEstate_Dapper_Api.Repositories.WhoWeAreRepository
             string query = "Update WhoWeAreDetail Set Title=@title,Subtitle=@subtitle, Description1=@description1,Description2=@description2 where WhoWeAreDetailID=@whoWeAreDetailID";
 
             var parameters = new DynamicParameters();
+            parameters.Add("@whoWeAreDetailID", updateWhoWeAreDetailDto.WhoWeAreDetailID);
             parameters.Add("@title", updateWhoWeAreDetailDto.Title);
             parameters.Add("@subtitle", updateWhoWeAreDetailDto.Subtitle);
             parameters.Add("@description1", updateWhoWeAreDetailDto.Description1);
@@ -89,9 +87,6 @@ namespace RealEstate_Dapper_Api.Repositories.WhoWeAreRepository
             {
                 await connection.ExecuteAsync(query, parameters);
             }
-
-
-
         }
     }
 }
