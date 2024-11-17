@@ -11,6 +11,8 @@ namespace RealEstate_Dapper_Api.Controllers
     {
         private readonly IWhoWeAreDetailRepository _whoWeAreDetailRepository;
 
+        //video 15 kaldım
+
         public WhoWeAreDetailController(IWhoWeAreDetailRepository whoWeAreDetailRepository)
         {
             _whoWeAreDetailRepository = whoWeAreDetailRepository;
