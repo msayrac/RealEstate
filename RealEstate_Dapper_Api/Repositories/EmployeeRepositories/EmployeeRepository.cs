@@ -32,7 +32,7 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
 		}
 
 		public async void DeleteEmployee(int id)
-		{
+		{			
 			string query = "Delete From Employee Where EmployeeID=@employeeID";
 			var parameters = new DynamicParameters();
 
