@@ -19,9 +19,10 @@
 
 		string NewestBuildingYear();
 		string OldestBuildingYear();	
+		int AverageRoomCount();
 		int ActiveEmployeeCount();
 
-
+		//11 dk kaldım
 
 
 
