@@ -10,9 +10,9 @@
 		int ApertmentCount();
 		string EmployeeNameByMaxProductCount();
 		string CategoryNameByMaxProductCount();
-		decimal AverageProductByRent();
+		decimal AverageProductPriceByRent();
 
-		decimal AverageProductBySale();
+		decimal AverageProductPriceBySale();
 		string CityNameByMaxProductCount();
 		int DifferentCityCount();
 		decimal LastProductPrice();
@@ -21,8 +21,6 @@
 		string OldestBuildingYear();	
 		int AverageRoomCount();
 		int ActiveEmployeeCount();
-
-		//11 dk kaldım
 
 
 
