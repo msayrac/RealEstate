@@ -11,7 +11,7 @@ namespace RealEstate_Dapper_Api.Controllers
     {
         private readonly IWhoWeAreDetailRepository _whoWeAreDetailRepository;
 
-        //video 15 kaldım
+   
 
         public WhoWeAreDetailController(IWhoWeAreDetailRepository whoWeAreDetailRepository)
         {
@@ -32,7 +32,7 @@ namespace RealEstate_Dapper_Api.Controllers
             return Ok("Hakkımızda Kısmı Başarılı Bir Şekilde Eklendi.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWhoWeAreDetail(int id)
         {
             _whoWeAreDetailRepository.DeleteWhoWeAreDetail(id);
