@@ -1,4 +1,4 @@
-﻿@model List<ResultServiceDto>
+﻿@model List<ResultWhoWeAreDetailDto>
 
 <section class="w3l-index3" id="about">
     <div class="midd-w3 pb-5">
@@ -21,7 +21,7 @@
                         <ul class="w3l-right-book w3l-right-book-grid mt-md-5 mt-4">
                             @foreach (var item in Model)
                             {
-                                <li><span class="fa fa-check" aria-hidden="true"></span>@item.ServiceName</li>
+                                <li><span class="fa fa-check" aria-hidden="true"></span>@item.Title</li>
 
                             }    
                             

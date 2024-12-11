@@ -9,9 +9,7 @@ namespace RealEstate_Dapper_Api.Controllers
     [ApiController]
     public class WhoWeAreDetailController : ControllerBase
     {
-        private readonly IWhoWeAreDetailRepository _whoWeAreDetailRepository;
-
-   
+        private readonly IWhoWeAreDetailRepository _whoWeAreDetailRepository;  
 
         public WhoWeAreDetailController(IWhoWeAreDetailRepository whoWeAreDetailRepository)
         {
