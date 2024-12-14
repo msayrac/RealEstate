@@ -7,7 +7,10 @@ namespace RealEstate_Dapper_Api.Repositories.PopularLocationRepositories
 	{
 		Task<List<ResultPopularLocationDto>> GetAllPopularLocationAsync();
 
-
+		void CreatePopularLocation(CreatePopularLocationDto createPopularLocationDto);
+		void DeletePopularLocation(int id);
+		void UpdatePopularLocation(UpdatePopularLocationDto updatePopularLocationDto);
+		Task<GetByIdPopularLocationDto> GetPopularLocation(int id);
 
 
 
