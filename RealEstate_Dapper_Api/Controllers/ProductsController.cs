@@ -32,9 +32,19 @@ namespace RealEstate_Dapper_Api.Controllers
 		}
 
 
+		[HttpGet("ProductDealOfTheStatusChangeToTrue/{id}")]
+		public async Task<IActionResult> ProductDealOfTheStatusChangeToTrue(int id)
+		{
+			_productRepository.ProductDealOfTheStatusChangeToTrue(id);
+			return Ok("İlan Günün Fırsatları Arasına Eklendi");
+		}
 
-
-
+		[HttpGet("ProductDealOfTheStatusChangeToFalse/{id}")]
+		public async Task<IActionResult> ProductDealOfTheStatusChangeToFalse(int id)
+		{
+			_productRepository.ProductDealOfTheStatusChangeToFalse(id);
+			return Ok("İlan Günün Fırsatları Arasından Çıkarıldı");
+		}
 
 
 
