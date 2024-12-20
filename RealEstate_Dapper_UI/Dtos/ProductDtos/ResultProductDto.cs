@@ -13,6 +13,5 @@
 		public string Address { get; set; }
         public bool DealOfTheDay { get; set; }
 
-
     }
 }

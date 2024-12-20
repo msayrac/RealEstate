@@ -9,7 +9,6 @@ namespace RealEstate_Dapper_UI.Controllers
 	public class ProductController : Controller
 	{
 		IHttpClientFactory _httpClientFactory;
-
 		public ProductController(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
@@ -73,6 +72,7 @@ namespace RealEstate_Dapper_UI.Controllers
 			}
 			return View();
 		}
+
 
 
 	}
