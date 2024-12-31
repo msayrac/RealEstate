@@ -47,6 +47,20 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
 			}
 		}
 
+		public async Task<List<ResultProductAdvertsListWithCategoryByEmployeeDto>> GetProductAdvertsListByEmployee(int id)
+		{
+			string query = "Select P.ProductID, P.Title,P.Price,P.City,P.District,C.CategoryName, P.CoverImage,P.Type,P.Address, P.DealOfTheDay From Product P join Category C on C.CategoryID=P.ProductCategory Where P.EmployeeID=@employeeID";
+
+			var parameters = new DynamicParameters();
+			parameters.Add("@employeeID", id);
+
+			using (var connection = _context.CreateConnection())
+			{
+				var values = await connection.QueryAsync<ResultProductAdvertsListWithCategoryByEmployeeDto>(query, parameters);
+				return values.ToList();
+			}
+		}
+
 		public async void ProductDealOfTheStatusChangeToFalse(int id)
 		{
 			string query = "Update Product Set DealOfTheDay=0 Where ProductID=@productID";
