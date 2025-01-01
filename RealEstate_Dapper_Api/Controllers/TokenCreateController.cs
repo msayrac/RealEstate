@@ -14,8 +14,6 @@ namespace RealEstate_Dapper_Api.Controllers
 			var values = JwtTokenGenerator.GenerateToken(model);
 
 			return Ok(values);
-
-
 		}
 
 
