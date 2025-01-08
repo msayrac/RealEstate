@@ -5,7 +5,6 @@ namespace RealEstate_Dapper_UI.ViewComponents.Dashboard
 	public class _DashboardStatisticsComponentPartial : ViewComponent
 	{
 		private IHttpClientFactory _httpClientFactory;
-
 		public _DashboardStatisticsComponentPartial(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
@@ -41,10 +40,6 @@ namespace RealEstate_Dapper_UI.ViewComponents.Dashboard
 			var jsonData4 = await responseMessage4.Content.ReadAsStringAsync();
 			ViewBag.averageProductPriceByRent = jsonData4;
 			#endregion
-
-
-
-
 
 			return View();
 		}
