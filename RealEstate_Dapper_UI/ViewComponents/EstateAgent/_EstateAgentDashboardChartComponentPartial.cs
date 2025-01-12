@@ -7,7 +7,6 @@ namespace RealEstate_Dapper_UI.ViewComponents.EstateAgent
 	public class _EstateAgentDashboardChartComponentPartial : ViewComponent
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
-
 		public _EstateAgentDashboardChartComponentPartial(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
