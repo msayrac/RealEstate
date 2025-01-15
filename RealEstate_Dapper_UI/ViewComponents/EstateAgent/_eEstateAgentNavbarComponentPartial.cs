@@ -2,7 +2,7 @@
 
 namespace RealEstate_Dapper_UI.ViewComponents.EstateAgent
 {
-    public class _EstateAgentNavbarComponentPartial : ViewComponent
+    public class _eEstateAgentNavbarComponentPartial : ViewComponent
     {
 
         public IViewComponentResult Invoke()
