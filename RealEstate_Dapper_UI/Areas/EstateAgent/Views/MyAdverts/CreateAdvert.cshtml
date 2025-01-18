@@ -1,7 +1,8 @@
 ﻿@model CreateProductDto
+
 @{
-    ViewData["Title"] = "CreateProduct";
-    Layout = "~/Views/Admin/Index.cshtml";
+    ViewData["Title"] = "CreateAdvert";
+    Layout = "~/Areas/EstateAgent/Views/LayoutEstateAgent/Index.cshtml";
 }
 
 <div class="container-fluid pt-4 px-4">
@@ -26,7 +27,7 @@
 					<br />
 
 					<label>Kategori</label>
-					@Html.DropDownListFor(x=>x.categoryid,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})				
+					@Html.DropDownListFor(x => x.categoryid, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
 					<br />
 
 					<label>Fiyat</label>
@@ -53,9 +54,6 @@
 		</div>
 	</div>
 </div>
-
-
-
 
 
 
