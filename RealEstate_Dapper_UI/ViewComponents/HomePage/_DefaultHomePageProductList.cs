@@ -7,7 +7,6 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 	public class _DefaultHomePageProductList : ViewComponent
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
-
 		public _DefaultHomePageProductList(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
@@ -25,7 +24,6 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 				return View(values);
 			}
 			return View();
-
 		}
 	}
 }
