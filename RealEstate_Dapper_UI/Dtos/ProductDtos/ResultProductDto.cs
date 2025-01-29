@@ -9,6 +9,7 @@
 		public string district { get; set; }
 		public string categoryName { get; set; }
 		public string CoverImage { get; set; }
+		public string description { get; set; }
 		public string Type { get; set; }
 		public string Address { get; set; }
         public bool DealOfTheDay { get; set; }
