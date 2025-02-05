@@ -31,6 +31,7 @@ namespace RealEstate_Dapper_UI.Controllers
 		{
 
 			ViewBag.v = TempData["word"];
+			ViewBag.y = TempData["word1"];
 
 			searchKeyValue = "daire";
 			propertyCategoryId = 1;
