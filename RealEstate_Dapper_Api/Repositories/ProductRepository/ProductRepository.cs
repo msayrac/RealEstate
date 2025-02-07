@@ -106,7 +106,22 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
             }
         }
 
-        public async Task<GetProductByProductIdDto> GetProductByProductId(int id)
+		public async Task<List<ResultProductWithCategoryDto>> GetProductByDealOfTheDayTrueWithCategoryAsync()
+		{
+
+			string query = "Select P.ProductID, P.Title,P.Price,P.City,P.District,C.CategoryName, P.CoverImage,P.Type,P.Address, P.DealOfTheDay From Product P join Category C on C.CategoryID=P.ProductCategory Where DealOfTheDay=1";
+
+			using (var connection = _context.CreateConnection())
+			{
+				var values = await connection.QueryAsync<ResultProductWithCategoryDto>(query);
+				return values.ToList();
+			}
+
+
+
+		}
+
+		public async Task<GetProductByProductIdDto> GetProductByProductId(int id)
         {
             string query = "Select P.ProductID, P.Title,P.Price,P.City,P.District, P.Description,C.CategoryName, P.CoverImage,P.Type,P.Address, P.DealOfTheDay, P.AdvertisementDate From Product P join Category C on C.CategoryID=P.ProductCategory Where P.ProductId=@productId";
 
