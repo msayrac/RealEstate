@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RealEstate_Dapper_UI.Dtos.BottomGridDtos;
+using RealEstate_Dapper_UI.Dtos.SubFeatureDtos;
 
 namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 {
 	public class _DefaultBottomGridComponentPartial : ViewComponent
 	{
 		private IHttpClientFactory _httpClientFactory;
-
 		public _DefaultBottomGridComponentPartial(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
