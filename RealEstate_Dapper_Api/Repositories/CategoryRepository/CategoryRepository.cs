@@ -13,7 +13,7 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
 			_context = context;
 		}
 
-		public async void CreateCategory(CreateCategoryDto createDto)
+		public async Task CreateCategory(CreateCategoryDto createDto)
 		{
 			string query = "insert into Category (CategoryName, CategoryStatus) values (@categoryName, @categoryStatus)";
 
@@ -27,7 +27,7 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
 			}
 		}
 
-		public async void DeleteCategory(int id)
+		public async Task DeleteCategory(int id)
 		{
 			string query = "Delete From Category Where CategoryID=@categoryID";
 
@@ -41,7 +41,7 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
 
 		}
 
-		public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
+		public async Task<List<ResultCategoryDto>> GetAllCategory()
 		{
 			string query = "Select * From Category";
 
@@ -66,7 +66,7 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
 			}
 		}
 
-		public async void UpdateCategory(UpdateCategoryDto updateCategoryDto)
+		public async Task UpdateCategory(UpdateCategoryDto updateCategoryDto)
 		{
 			string query = "Update Category Set CategoryName=@categoryName,CategoryStatus=@categoryStatus where CategoryID=@categoryID";
 

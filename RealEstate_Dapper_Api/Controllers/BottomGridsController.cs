@@ -19,7 +19,7 @@ namespace RealEstate_Dapper_Api.Controllers
 		[HttpGet]
 		public async Task<IActionResult> BottomGridList()
 		{
-			var values = await _bottomGridRepository.GetAllBottomGridAsync();
+			var values = await _bottomGridRepository.GetAllBottomGrid();
 			return Ok(values);
 		}
 
@@ -52,14 +52,6 @@ namespace RealEstate_Dapper_Api.Controllers
 			var values = await _bottomGridRepository.GetBottomGrid(id);
 			return Ok(values);
 		}
-
-
-
-
-
-
-
-
-
+	
 	}
 }
