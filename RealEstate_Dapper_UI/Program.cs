@@ -10,7 +10,7 @@ JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 
 builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettingsKey"));
 
-builder.Services.AddScoped<ApiSettings>();
+
 
 // Add services to the container.
 builder.Services.AddHttpClient();
