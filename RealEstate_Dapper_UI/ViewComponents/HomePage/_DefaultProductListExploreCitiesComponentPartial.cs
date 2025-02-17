@@ -18,6 +18,7 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 			_apiSettings = apiSettings.Value;
 		}
 
+
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var client = _httpClientFactory.CreateClient();
