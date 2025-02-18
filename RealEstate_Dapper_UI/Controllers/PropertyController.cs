@@ -48,29 +48,22 @@ namespace RealEstate_Dapper_UI.Controllers
 			}
 			return View();
 
-
-
-
 		}
 
 
-
-
-
-
 		[HttpGet]
-		public async Task<IActionResult> PropertySingle(int id)
+		public async Task<IActionResult> PropertySingle(int id1)
 		{
-			id = 1;
-
+			var id = 1;
+			ViewBag.i = id1;
 			var client = _httpClientFactory.CreateClient();
 
-			var responseMessage = await client.GetAsync("https://localhost:44373/api/Products/GetProductByProductId?id=" + id);
+			var responseMessage = await client.GetAsync("https://localhost:44373/api/Products/GetProductByProductId?id=" + id1);
 			var jsonData = await responseMessage.Content.ReadAsStringAsync();
 			var values = JsonConvert.DeserializeObject<ResultProductDto>(jsonData);
 
 			var client2 = _httpClientFactory.CreateClient();
-			var responseMessage2 = await client2.GetAsync("https://localhost:44373/api/ProductDetails/GetProductDetailByProductId?id=" + id);
+			var responseMessage2 = await client2.GetAsync("https://localhost:44373/api/ProductDetails/GetProductDetailByProductId?id=" + id1);
 			var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
 			var values2 = JsonConvert.DeserializeObject<GetProductDetailByIdDto>(jsonData2);
 
