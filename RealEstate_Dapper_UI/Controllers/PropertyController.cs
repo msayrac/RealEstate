@@ -51,19 +51,18 @@ namespace RealEstate_Dapper_UI.Controllers
 		}
 
 
-		[HttpGet]
-		public async Task<IActionResult> PropertySingle(int id1)
+		[HttpGet("property/{slug}/{id}")]
+		public async Task<IActionResult> PropertySingle(string slug, int id)
 		{
-			var id = 1;
-			ViewBag.i = id1;
+			ViewBag.i = id;
 			var client = _httpClientFactory.CreateClient();
 
-			var responseMessage = await client.GetAsync("https://localhost:44373/api/Products/GetProductByProductId?id=" + id1);
+			var responseMessage = await client.GetAsync("https://localhost:44373/api/Products/GetProductByProductId?id=" + id);
 			var jsonData = await responseMessage.Content.ReadAsStringAsync();
 			var values = JsonConvert.DeserializeObject<ResultProductDto>(jsonData);
 
 			var client2 = _httpClientFactory.CreateClient();
-			var responseMessage2 = await client2.GetAsync("https://localhost:44373/api/ProductDetails/GetProductDetailByProductId?id=" + id1);
+			var responseMessage2 = await client2.GetAsync("https://localhost:44373/api/ProductDetails/GetProductDetailByProductId?id=" + id);
 			var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
 			var values2 = JsonConvert.DeserializeObject<GetProductDetailByIdDto>(jsonData2);
 
@@ -76,7 +75,7 @@ namespace RealEstate_Dapper_UI.Controllers
 			ViewBag.type = values.Type;
 			ViewBag.description = values.description;
 			ViewBag.date = values.AdvertisementDate;
-
+			ViewBag.slugUrl = values.SlugUrl;
 
 			ViewBag.bathCount = values2.bathCount;
 			ViewBag.bedCount = values2.bedRoomCount;
@@ -87,18 +86,43 @@ namespace RealEstate_Dapper_UI.Controllers
 			ViewBag.location = values2.location;
 			ViewBag.videoUrl = values2.videoUrl;
 
-
-
 			DateTime date1 = DateTime.Now;
 			DateTime date2 = values.AdvertisementDate;
-
 			TimeSpan timeSpan = date1 - date2;
 			int month = timeSpan.Days;
 			ViewBag.datediff = month / 30;
 
+			string slugFromTitle = CreateSlug(values.title);
+			ViewBag.slugUrl = slugFromTitle;
+
+
+
 			return View();
+		}
+
+
+		private string CreateSlug(string title)
+		{
+			title = title.ToLowerInvariant(); // Küçük harfe çevir
+			title = title.Replace(" ", "-"); // Boşlukları tire ile değiştir
+			title = System.Text.RegularExpressions.Regex.Replace(title, @"[^a-z0-9\s-]", ""); // Geçersiz karakterleri kaldır
+			title = System.Text.RegularExpressions.Regex.Replace(title, @"\s+", " ").Trim(); // Birden fazla boşluğu tek boşluğa indir ve kenar boşluklarını kaldır
+			title = System.Text.RegularExpressions.Regex.Replace(title, @"\s", "-"); // Boşlukları tire ile değiştir
+
+			return title;
+
+
 
 		}
+
+
+
+
+
+
+
+
+
 
 
 

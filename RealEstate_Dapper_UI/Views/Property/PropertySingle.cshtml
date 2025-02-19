@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
 	ViewData["Title"] = "PropertySingle";
 	Layout = "~/Views/Shared/_DefaultLayout.cshtml";
 }
@@ -24,7 +25,7 @@
 		<div class="inner mb-4">
 			<ul class="blog-single-author-date align-items-center">
 				<li>
-					<div class="listing-category"><span>@ViewBag.type</span></div>
+					<div class="listing-category"><span>@ViewBag.type @ViewBag.slugUrl</span></div>
 				</li>
 				<li><span class="fa fa-clock-o"></span>Yaklaşık @ViewBag.datediff Ay Önce İlana Eklendi.</li>
 				<li><span class="fa fa-eye"></span> 250 kişi bu ilanı görüntüledi.</li>
